@@ -81,6 +81,7 @@ class RouteParameterDefaults {
            }
            return $local_parameters;
     }    
+}
      /**
      * Generate the URL to a named route.
      *
@@ -96,7 +97,7 @@ class RouteParameterDefaults {
         // Generate and return the route URL
         return route($name,$params,$absolute = true);
     }
-    }
+    
 
     /**
      * Create a new redirect response to a named route.
