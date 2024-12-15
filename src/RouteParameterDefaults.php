@@ -62,10 +62,10 @@ class RouteParameterDefaults {
         }
         }
     }
-    private function updateParameters($name,$parameters){
+    private function updateParameters($route_name,$parameters){
         $local_parameters =[...$parameters];
            // Get the route instance by its name
-           $route = \Illuminate\Support\Facades\Route::getRoutes()->getByName($name);
+           $route = \Illuminate\Support\Facades\Route::getRoutes()->getByName($route_name);
            if($route){
            // Get the route's parameter names
            $route_parameters = $route ? $route->parameterNames() : [];
@@ -83,32 +83,32 @@ class RouteParameterDefaults {
      /**
      * Generate the URL to a named route.
      *
-     * @param  string  $name
+     * @param  string  $route_name
      * @param  mixed  $parameters
      * @param  bool  $absolute
      * @return string
      */
-    function route($name, $parameters = [], $absolute = true)
+    function route($route_name, $parameters = [], $absolute = true)
     {
      
-        $params = $this->updateParameters($name,$parameters);
+        $params = $this->updateParameters($route_name,$parameters);
         // Generate and return the route URL
-        return route($name,$params,$absolute = true);
+        return route($route_name,$params,$absolute = true);
     }
     
 
     /**
      * Create a new redirect response to a named route.
      *
-     * @param  string  $route
+     * @param  string  $route_name
      * @param  mixed  $parameters
      * @param  int  $status
      * @param  array  $headers
      * @return \Illuminate\Http\RedirectResponse
      */
-    function to_route($route, $parameters = [], $status = 302, $headers = [])
+    function to_route($route_name, $parameters = [], $status = 302, $headers = [])
     {
-        $params = $this->updateParameters($name,$parameters);
-        return redirect()->route($route, $params, $status, $headers);
+        $params = $this->updateParameters($route_name,$parameters);
+        return redirect()->route($route_name, $params, $status, $headers);
     }
 }

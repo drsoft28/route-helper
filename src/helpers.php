@@ -38,9 +38,9 @@ if (!function_exists('to_routeWithDefault')) {
      * @param  array  $headers
      * @return \Illuminate\Http\RedirectResponse
      */
-    function to_routeWithDefault($route, $parameters = [], $status = 302, $headers = [])
+    function to_routeWithDefault($name, $parameters = [], $status = 302, $headers = [])
      {
-        app('RouteParameterDefaults')->to_route($name, $parameters , $status, $headers);
+       return route_defaults()->to_route($name, $parameters , $status, $headers);
      }
  
  }
