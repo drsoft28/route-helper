@@ -1,0 +1,25 @@
+{
+    "name": "drsoft/route-helper",
+    "description": "A Laravel package for managing route parameter defaults.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Drsoft28\\RouteHelper\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+        "extra": {
+        "laravel": {
+            "providers": [
+                "Drsoft28\\RouteHelper\\RouteHelperServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "^10.0"
+    }
+}
