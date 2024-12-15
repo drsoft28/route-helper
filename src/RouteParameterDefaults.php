@@ -69,19 +69,17 @@ class RouteParameterDefaults {
            if($route){
            // Get the route's parameter names
            $route_parameters = $route ? $route->parameterNames() : [];
-           
-           if (is_array($local_parameters)) {
-               foreach($local_parameters as $key=>$value){
+               foreach($route_parameters as $key){
                    // Check if the parameter is already passed in the parameters
                    if($this->has($key)){
-                       // If the 'slug' exists in the request, add it to the parameters
+                       // If the key exists in the request, add it to the parameters
                        $local_parameters[$key] = $this->get($key);
+                        
                     }
                }
-           }
-           return $local_parameters;
-    }    
-}
+            }  
+        return $local_parameters;
+    } 
      /**
      * Generate the URL to a named route.
      *
