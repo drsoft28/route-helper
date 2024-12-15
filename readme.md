@@ -13,7 +13,7 @@ This package simplifies the use of default parameters for Laravel routes. It all
 1. Install the package using Composer:
 
    ```bash
-   composer require drsoft28/route-helper
+   composer require drsoft/route-helper
    ```
 
 2. Add the service provider to your `config/app.php` file (if not automatically registered):
