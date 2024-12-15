@@ -15,7 +15,10 @@
         "laravel": {
             "providers": [
                 "Drsoft28\\RouteHelper\\RouteHelperServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "RouteHelper": "Drsoft28\\RouteHelper\\Facades\\RouteHelper"
+            }
         }
     },
     "require": {
