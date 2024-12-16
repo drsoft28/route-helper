@@ -104,6 +104,10 @@ route_defaults()->remove('slug');
 
 The package binds a singleton instance of `RouteParameterDefaults` to the service container. This instance manages the default values for route parameters and integrates them seamlessly into Laravel's route generation and redirection mechanisms.
 
+## watch in youtube
+
+https://youtu.be/kbAJRNHTK78
+
 ## License
 
 This package is open-source software licensed under the [MIT license](LICENSE).
