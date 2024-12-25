@@ -63,7 +63,8 @@ class RouteParameterDefaults {
         }
     }
     private function updateParameters($route_name,$parameters){
-        $local_parameters =[...$parameters];
+        $params = is_array($parameters)?$parameters:[$parameters];
+        $local_parameters =[...$params];
            // Get the route instance by its name
            $route = \Illuminate\Support\Facades\Route::getRoutes()->getByName($route_name);
            if($route){
